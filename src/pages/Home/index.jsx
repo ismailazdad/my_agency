@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import colors from '../../utils/style/colors'
 import {StyledLink} from '../../utils/style/Atoms'
 import HomeIllustration from '../../assets/home-illustration.svg'
+import {useEffect} from "react";
 
 const HomeWrapper = styled.div`
   display: flex;

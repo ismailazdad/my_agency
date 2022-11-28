@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import Home from './pages/Home/index';
@@ -21,7 +21,7 @@ const GlobalStyle = createGlobalStyle`
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-    <React.StrictMode>
+    // <React.StrictMode>
         <Router>
             <GlobalStyle />
             <Header/>
@@ -38,6 +38,6 @@ root.render(
                 </Route>
             </Routes>
         </Router>
-    </React.StrictMode>
+    // </React.StrictMode>
 );
 
