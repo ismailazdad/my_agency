@@ -11,7 +11,7 @@ const CardLabel = styled.span`
   padding-left: 15px;
 `
 const CardTitle = styled.span`
-  color: black;
+  color: #000;
   font-size: 22px;
   font-weight: normal;
   align-self: center;
@@ -36,8 +36,7 @@ const CardWrapper = styled.div`
   transition: 200ms;
   &:hover {
     cursor: pointer;
-    // box-shadow: 2px 2px 10px #e2e3e9;
-    box-shadow: 2px 2px 10px #000;
+    box-shadow: 2px 2px 10px #e2e3e9;
   }
 `
 

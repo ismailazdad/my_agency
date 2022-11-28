@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import colors from '../../utils/style/colors'
 import ErrorPage from '../../assets/error.svg'
+import React from "react";
 
 const ErrorWrapper = styled.div`
   margin: 30px;

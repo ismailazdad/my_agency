@@ -1,7 +1,9 @@
 import Card from '../../components/Card'
 import styled from 'styled-components'
 import colors from '../../utils/style/colors'
-
+import Picture from '../../assets/profile1.png'
+import Picture2 from '../../assets/profile2.png'
+import Picture3 from '../../assets/profile3.png'
 const CardsContainer = styled.div`
   display: grid;
   gap: 24px;
@@ -30,14 +32,23 @@ const freelanceProfiles = [
     {
         name: 'Jane Doe',
         jobTitle: 'Devops',
+        picture : Picture2
+
     },
     {
         name: 'John Doe',
         jobTitle: 'Developpeur frontend',
+        picture : Picture
+
     },
     {
         name: 'Jeanne Biche',
         jobTitle: 'Développeuse Fullstack',
+    },
+    {
+        name: 'Jannis joplin',
+        jobTitle: 'Développeuse back-end',
+        picture : Picture3
     },
 ]
 
@@ -54,6 +65,7 @@ function Freelances() {
                         key={`${profile.name}-${index}`}
                         label={profile.jobTitle}
                         title={profile.name}
+                        picture={profile.picture}
                     />
                 ))}
             </CardsContainer>

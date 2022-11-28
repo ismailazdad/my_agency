@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import colors from '../../utils/style/colors'
-import { StyledLink } from '../../utils/style/Atoms'
+import {StyledLink} from '../../utils/style/Atoms'
 import HomeIllustration from '../../assets/home-illustration.svg'
 
 const HomeWrapper = styled.div`
@@ -15,6 +15,10 @@ const HomerContainer = styled.div`
   display: flex;
   flex-direction: row;
   max-width: 1200px;
+    &:hover {
+    cursor: pointer;
+    box-shadow: 2px 2px 10px #e2e3e9;
+    }
 `
 
 const LeftCol = styled.div`
@@ -43,8 +47,7 @@ function Home() {
         <HomerContainer>
           <LeftCol>
             <StyledTitle>
-              Repérez vos besoins, on s’occupe du reste, avec les meilleurs
-              talents
+              Repérez vos besoins, on s’occupe du reste, avec les meilleurs talents
             </StyledTitle>
             <StyledLink to="/survey/1" $isFullLink>
               Faire le test
