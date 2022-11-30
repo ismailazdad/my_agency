@@ -1,31 +1,10 @@
-import styled from 'styled-components'
-import colors from '../../utils/style/colors'
 import ErrorPage from '../../assets/error.svg'
 import {useTheme} from "../../utils/hooks"
+import {ErrorSubtitle, ErrorTitle, ErrorWrapper, Illustration} from "./style"
+import React from "react";
 
-const ErrorWrapper = styled.div`
-  margin: 30px;
-  display: flex;
-  flex-direction: column;
-  background-color: ${({theme}) => theme === 'light' ? colors.backgroundLight : colors.backgroundDark};
-  align-items: center;
-`
-
-const ErrorTitle = styled.h1`
-  color: ${({ theme }) => (theme === 'light' ? '#000000' : '#ffffff')};
-  font-weight: 300;
-`
-
-const ErrorSubtitle = styled.h2`
-  font-weight: 300;
-  color: ${({ theme }) => (theme === 'light' ? colors.secondary : '#ffffff')};
-`
-
-const Illustration = styled.img`
-  max-width: 800px;
-`
 function Error() {
-    const {theme} =useTheme()
+    const {theme} = useTheme()
     return (
         <ErrorWrapper id='test' theme={theme}>
             <ErrorTitle theme={theme}>Oups...</ErrorTitle>

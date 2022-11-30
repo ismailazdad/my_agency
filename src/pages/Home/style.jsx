@@ -1,0 +1,43 @@
+import styled from "styled-components";
+import colors from "../../utils/style/colors";
+import {StyledLink} from "../../utils/style/Atoms";
+
+export const HomeWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+`
+
+export const HomerContainer = styled.div`
+  margin: 30px;
+  background-color: ${({theme}) =>
+    theme === 'light' ? colors.backgroundLight : colors.backgroundDark};
+  padding: 60px 90px;
+  display: flex;
+  flex-direction: row;
+  max-width: 1200px;
+    &:hover {
+    cursor: pointer;
+    box-shadow: 2px 2px 10px #e2e3e9;
+    }
+`
+
+export const LeftCol = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
+  ${StyledLink} {
+    max-width: 250px;
+  }
+`
+
+export const StyledTitle = styled.h2`
+  padding-bottom: 30px;
+  max-width: 280px;
+  line-height: 50px;
+  color: ${({theme}) => (theme === 'light' ? colors.primary : colors.secondary)};
+`
+
+export const Illustration = styled.img`
+  flex: 1;
+`
