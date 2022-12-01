@@ -15,6 +15,7 @@ deploy app in surge , [live demo link](https://my_agency.surge.sh/)
 - use function component and class component
 - test pages and component with Jest and React testing library 
 - add api request for all data showing in app
+- handle environment variable with .env 
 
 ## Available Scripts
 
