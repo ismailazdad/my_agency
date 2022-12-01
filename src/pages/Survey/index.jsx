@@ -2,7 +2,7 @@ import React, {useContext} from 'react'
 import {useParams} from 'react-router-dom'
 import {Loader, StyledLink} from '../../utils/style/Atoms'
 import {SurveyContext} from '../../utils/context'
-import {useFetch, useTheme} from '../../utils/hooks'
+import {useFetch,useFetch2, useTheme} from '../../utils/hooks'
 import {SurveyContainer,QuestionTitle,ReplyWrapper,QuestionContent,ReplyBox,LinkWrapper} from "./style"
 
 
@@ -18,8 +18,12 @@ function Survey() {
         saveAnswers({[questionNumber]: answer})
     }
 
-    const {data, isLoading, error} = useFetch(`http://localhost:8000/survey`)
-    const surveyData = data?.surveyData
+    // const {isLoading,data, error} = useFetch(`http://localhost:8000/survey`)
+    // const surveyData = data?.surveyData
+    const url = process.env.REACT_APP_API_URL
+    const { isLoading,data, error} = useFetch2(url+`/survey`,'surveyData')
+    const surveyData = data
+
     if (error) {
         return <span>Oups il y a eu un problème</span>
     }

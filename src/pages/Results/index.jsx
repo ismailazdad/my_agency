@@ -1,8 +1,9 @@
 import {useContext} from 'react'
 import {SurveyContext} from '../../utils/context'
-import {useFetch, useTheme} from '../../utils/hooks'
+import {useFetch, useFetch2, useTheme} from '../../utils/hooks'
 import {Loader, StyledLink} from '../../utils/style/Atoms'
 import {LoaderWrapper, ResultsContainer, ResultsTitle, JobTitle, DescriptionWrapper,JobDescription} from "./style"
+import EmptyList from '../../components/EmptyList'
 
 export function formatFetchParams(answers) {
     const answerNumbers = Object.keys(answers)
@@ -25,14 +26,20 @@ function Results() {
     const {answers} = useContext(SurveyContext)
     const fetchParams = formatFetchParams(answers)
 
-    const {data, isLoading, error} = useFetch(`http://localhost:8000/results?${fetchParams}`)
+    // const {data, isLoading, error} = useFetch(`http://localhost:8000/results?${fetchParams}`)
+    // const resultsData = data?.resultsData
+    const url = process.env.REACT_APP_API_URL
+    const { isLoading,data, error} = useFetch2(url+`/results?${fetchParams}`,'resultsData')
+    const resultsData = data
 
     if (error) {
         return <span>Il y a un problème</span>
     }
 
-    const resultsData = data?.resultsData
 
+    if (resultsData?.length < 1) {
+        return <EmptyList theme={theme} />
+    }
     return isLoading ? (
         <LoaderWrapper data-testid="loader">
             <Loader/>

@@ -1,6 +1,8 @@
 import styled from 'styled-components'
 import React, { Component } from 'react'
 import colors from '../../utils/style/colors'
+import { useState } from 'react'
+
 
 const InputWrapper = styled.div`
   color: ${({ theme }) => (theme === 'light' ? colors.dark : 'white')};
@@ -21,35 +23,52 @@ const StyledInput = styled.input`
   margin-top: 5px;
   margin-bottom: 15px;
 `
+//syntax with class
+// class EmailInput extends Component {
+//     constructor(props) {
+//         // L'autre manière de binder de manière explicite votre fonction au this
+//         // this.updateInputValue =this.updateInputValue.bind(this)
+//         super(props)
+//         this.state = {
+//             inputValue: '',
+//         }
+//     }
+//
+//     updateInputValue(value) {
+//         this.setState({ inputValue: value })
+//     }
+//
+//     render() {
+//         const { theme } = this.props
+//
+//         return (
+//             <InputWrapper theme={theme}>
+//                 <StyledLabel theme={theme}>Adresse Email</StyledLabel>
+//                 <StyledInput
+//                     theme={theme}
+//                     onChange={(e) => this.updateInputValue(e.target.value)}
+//                 />
+//                 {this.state.inputValue}
+//             </InputWrapper>
+//         )
+//     }
+// }
+//syntax with function
+function EmailInput({ theme }) {
+    const [inputValue, setInputValue] = useState('')
 
-class EmailInput extends Component {
-    constructor(props) {
-        // L'autre manière de binder de manière explicite votre fonction au this
-        // this.updateInputValue =this.updateInputValue.bind(this)
-        super(props)
-        this.state = {
-            inputValue: '',
-        }
-    }
-
-    updateInputValue(value) {
-        this.setState({ inputValue: value })
-    }
-
-    render() {
-        const { theme } = this.props
-
-        return (
-            <InputWrapper theme={theme}>
-                <StyledLabel theme={theme}>Adresse Email</StyledLabel>
-                <StyledInput
-                    theme={theme}
-                    onChange={(e) => this.updateInputValue(e.target.value)}
-                />
-                {this.state.inputValue}
-            </InputWrapper>
-        )
-    }
+    return (
+        <InputWrapper theme={theme}>
+            <StyledLabel theme={theme}>Adresse email</StyledLabel>
+            <StyledInput
+                theme={theme}
+                onChange={(e) => setInputValue(e.target.value)}
+            />
+            {inputValue}
+        </InputWrapper>
+    )
 }
+
+
 
 export default EmailInput

@@ -8,7 +8,7 @@ export const CardLabel = styled.span`
   padding-left: 15px;
 `
 export const CardTitle = styled.span`
-  color: ${({ theme }) => (theme === 'light' ? '#000000' : '#ffffff')};
+  color: ${( {theme }) => (theme === 'light' ? '#000000' : '#ffffff')};
   font-size: 22px;
   font-weight: normal;
   align-self: center;

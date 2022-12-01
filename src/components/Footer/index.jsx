@@ -1,6 +1,8 @@
 import {useTheme} from "../../utils/hooks"
 import styled from 'styled-components'
 import colors from '../../utils/style/colors'
+import EmailInput from "../EmailInput";
+import React from "react";
 
 const FooterContainer = styled.footer`
     display: flex;
@@ -21,6 +23,7 @@ function Footer() {
     const { theme, toggleTheme} = useTheme()
     return (
         <FooterContainer>
+            <EmailInput theme={theme} />< br/>
             <NightModeButton onClick={() => toggleTheme()}>
                 Changer de mode : {theme === 'light' ? '☀️' : '🌙'}
             </NightModeButton>

@@ -6,9 +6,9 @@ import Survey from "./pages/Survey";
 import Results from './pages/Results'
 import Freelances from './pages/Freelances'
 import Error from './components/Error'
+import Profile from './pages/Profile'
 import Header from './components/Header'
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom'
-import {createGlobalStyle} from 'styled-components'
 import {SurveyProvider, ThemeProvider} from "./utils/context"
 import Footer from "./components/Footer";
 import GlobalStyle from './utils/style/GlobalStyle'
@@ -29,6 +29,8 @@ root.render(
                     <Route path="/results" element={<Results/>}>
                     </Route>
                     <Route path="/freelances" element={<Freelances/>}>
+                    </Route>
+                    <Route path="/profile/:id" element={ <Profile />}>
                     </Route>
                     <Route path="*" element={<Error/>}>
                     </Route>
