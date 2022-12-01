@@ -5,7 +5,8 @@ import { waitForElementToBeRemoved, screen } from '@testing-library/react'
 import { render } from '../../utils/test'
 import React from "react";
 import Results from "./index";
-
+const url = process.env.REACT_APP_API_URL
+const url_local = process.env.REACT_APP_API_URL_local
 test('should multiply by 3', () => {
     expect(formatJobList('item2',3,1)) === 'item2,'
 })
@@ -48,7 +49,7 @@ const resultsMockedData = [
 ]
 
 const server = setupServer(
-    rest.get('http://localhost:8000/results', (req, res, ctx) => {
+    rest.get(url+'/results', (req, res, ctx) => {
         return res(ctx.json({ resultsData: resultsMockedData }))
     })
 )

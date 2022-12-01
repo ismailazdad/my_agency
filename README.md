@@ -2,6 +2,20 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+React App project :
+
+using small testing api [link](OpenClassrooms-Student-Center/7150606-API-React-intermediairemaster) hosting in [render.com](render.com)
+deploy app in surge , [live demo link](https://my_agency.surge.sh/)
+
+##description 
+
+- using Route maping for rendering mutliples pages with react router
+- use hooks and context and propTypes
+- use globalStyle, and style.jsx and styled component
+- use function component and class component
+- test pages and component with Jest and React testing library 
+- add api request for all data showing in app
+
 ## Available Scripts
 
 In the project directory, you can run:

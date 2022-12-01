@@ -18,7 +18,10 @@ class Card extends Component {
     // }
 
     render() {
+        const url = process.env.REACT_APP_API_URL
+        const url_local = process.env.REACT_APP_API_URL_local
         const { theme, picture, label, title } = this.props
+        // picture =picture.replace(url_local,url)
         // const { isFavorite } = this.state
         // const star = isFavorite ? '⭐️' : ''
 
@@ -26,7 +29,7 @@ class Card extends Component {
             // <CardWrapper theme={theme} onClick={this.setFavorite}>
             <CardWrapper theme={theme} >
                 <CardLabel theme={theme}>{label}</CardLabel>
-                <CardImage src={picture} alt="freelance" />
+                <CardImage src={picture.replace(url_local,url)} alt="freelance" />
                 <CardTitle theme={theme}>
                      {title}
                 </CardTitle>

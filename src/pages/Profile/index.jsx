@@ -96,6 +96,7 @@ const LoaderWrapper = styled.div`
 function Profile() {
     const {id: queryId} = useParams()
     const url = process.env.REACT_APP_API_URL
+    const url_local = process.env.REACT_APP_API_URL_local
     const {isLoading, data,error} = useFetch2(url+`/freelance?id=${queryId}`,'freelanceData')
     if (error) {
         return <span>Oups il y a eu un problème l'identifiant {queryId} n'est pas present</span>
@@ -110,7 +111,7 @@ function Profile() {
             <ThemeContext.Consumer>
                 {({theme}) => (
                     <ProfileWrapper theme={theme}>
-                        <Picture src={picture} alt={name} height={150} width={150}/>
+                        <Picture src={picture.replace(url_local,url)} alt={name} height={150} width={150}/>
                         <ProfileDetails theme={theme}>
                             <TitleWrapper>
                                 <Title>{name}</Title>

@@ -5,7 +5,8 @@ import { screen, waitFor, waitForElementToBeRemoved} from "@testing-library/reac
 import Freelances from "./"
 import React from "react";
 import { render } from '../../utils/test'
-
+const url = process.env.REACT_APP_API_URL
+const url_local = process.env.REACT_APP_API_URL_local
 const freelancersMockedData = [
     {
         name: 'Harry Potter',
@@ -20,7 +21,7 @@ const freelancersMockedData = [
 ]
 const server = setupServer(
     // On précise ici l'url qu'il faudra "intercepter"
-    rest.get('http://localhost:8000/freelances', (req, res, ctx) => {
+    rest.get(url+'/freelances', (req, res, ctx) => {
         // Là on va pouvoir passer les datas mockées dans ce qui est retourné en json
         return res(ctx.json({freelancersList: freelancersMockedData}))
     })

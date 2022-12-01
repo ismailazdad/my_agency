@@ -1,5 +1,5 @@
 import { render as rtlRender } from '@testing-library/react'
-import { ThemeProvider, SurveyProvider } from '../../utils/context'
+import { ThemeProvider, SurveyProvider } from '../context'
 import { MemoryRouter } from 'react-router-dom'
 import React from "react";
 

@@ -10,6 +10,7 @@ function Freelances() {
     // const freelancersList = data?.freelancersList
     //other method
     const url = process.env.REACT_APP_API_URL
+    const url_local = process.env.REACT_APP_API_URL_local
     const { isLoading,data, error} = useFetch2(url+`/freelances`,'freelancersList')
     const freelancersList = data
     if (error) {
@@ -28,7 +29,7 @@ function Freelances() {
             ) : (
                 <CardsContainer>
                     {freelancersList.map((profile, index) => (
-                        <Link key={`freelance-${profile.id}`} to={`/profile/${profile.id}`}>
+                        <Link key={`freelance-${index}`} to={`/profile/${profile.id}`}>
                             <Card
                                 key={`${profile['name']}-${index}`}
                                 label={profile['job']}
