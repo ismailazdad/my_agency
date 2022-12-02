@@ -4,7 +4,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 React App project :
 
-using small testing api [link](https://github.com/OpenClassrooms-Student-Center/7150606-API-React-intermediaire.git) hosting in [render.com](render.com)
+using small testing api [link](https://my-agency.onrender.com ) hosting in [render.com](render.com)
 deploy app in surge , [live demo link](https://my_agency.surge.sh/)
 
 ## description 
